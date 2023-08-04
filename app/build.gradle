@@ -19,7 +19,14 @@ plugins {
 android {
     namespace 'com.example.cachorros'
     compileSdkVersion 33
-
+    signingConfigs {
+        release {
+            storeFile file('C:\\Program Files\\Java\\jre-1.8\\bin\\my-release-key.keystore') // Ruta al archivo keystore
+            storePassword 'aliro123'
+            keyAlias 'my-key-alias'
+            keyPassword 'fufu321'
+        }
+    }
     defaultConfig {
         applicationId "com.example.cachorros"
         minSdkVersion 26
@@ -34,6 +41,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
         }
     }
 
