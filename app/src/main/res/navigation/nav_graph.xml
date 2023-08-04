@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/razasFragment">
+
+    <fragment
+        android:id="@+id/razasFragment"
+        android:name="com.example.cachorros.views.RazasFragment"
+        android:label="fragment_razas"
+        tools:layout="@layout/fragment_razas" >
+        <action
+            android:id="@+id/action_razasFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <action
+            android:id="@+id/action_razasFragment_to_perroFragment"
+            app:destination="@id/perroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/perroFragment"
+        android:name="com.example.cachorros.views.PerroFragment"
+        android:label="fragment_perro"
+        tools:layout="@layout/fragment_perro" >
+        <action
+            android:id="@+id/action_perroFragment_to_favoritosFragment"
+            app:destination="@id/favoritosFragment" />
+        <argument
+            android:name="link"
+            app:argType="string" />
+        <argument
+            android:name="raza"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritosFragment"
+        android:name="com.example.cachorros.views.FavoritosFragment"
+        android:label="fragment_favoritos"
+        tools:layout="@layout/fragment_favoritos" />
+</navigation>

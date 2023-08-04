@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.MainActivity">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#EB651FFF"
+            android:gravity="center"
+            android:text="Tus Canes Favoritos!"
+            android:textColor="#F7F8F0F0"
+            android:textSize="24sp"
+            android:textStyle="bold|italic"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/navContainer1"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="680dp"
+            app:defaultNavHost="true"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:navGraph="@navigation/nav_graph"
+            tools:layout_editor_absoluteX="0dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
